@@ -1,9 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var {Provider} = require('react-redux');
+var TestUtils = require('react-addons-test-utils');
 var expect = require('expect');
 var $ = require('jQuery');
-var TestUtils = require('react-addons-test-utils');
+
 
 import {configure} from 'configureStore';
 import ConnectedTodoList, {TodoList} from 'TodoList';
@@ -16,7 +17,7 @@ describe('TodoList', () => {
 	});
 
 	it('should render one Todo Component for each todo item', () => {
-		var todos =[{
+		var todos = [{
 			id: 1,
 			text: 'Do something',
 			completed: false,
@@ -32,7 +33,7 @@ describe('TodoList', () => {
 		}];
 
 		var store = configure({
-			todos: todos
+			todos
 		});
 		var provider = TestUtils.renderIntoDocument(
 			<Provider store={store}>

@@ -20,7 +20,7 @@ var TodoApp = React.createClass({
 						</div>
 					</div>
 				</div>
-		  	</div>
+		  </div>
 
 		)
 	}
