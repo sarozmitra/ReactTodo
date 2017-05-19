@@ -7,12 +7,10 @@ require("firebase/database");
 
 try {
   var config = {
-      apiKey: "AIzaSyCMXqPbK3V4MDAbaLwM2S4o0phFOWT5ezY",
-      authDomain: "mead-todo-app-1745b.firebaseapp.com",
-      databaseURL: "https://mead-todo-app-1745b.firebaseio.com",
-      //projectId: "mead-todo-app-1745b",
-      storageBucket: "mead-todo-app-1745b.appspot.com",
-      //messagingSenderId: "508151249585"
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
+      databaseURL: process.env.DATABASE_URL,
+      storageBucket: process.env.STORAGE_BUCKET,
     };
 
   firebase.initializeApp(config);
