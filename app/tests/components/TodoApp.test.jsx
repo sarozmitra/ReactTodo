@@ -7,8 +7,9 @@ var $ = require('jQuery');
 
 
 var configureStore = require('configureStore');
-import TodoList from 'TodoList';
 import {TodoApp} from 'TodoApp';
+import TodoList from 'TodoList';
+
 
 
 describe('TodoApp', () => {
@@ -24,9 +25,9 @@ describe('TodoApp', () => {
 			</Provider>
 		);
 
-		var todoApp = TestUtils.scryRenderedComponentsWithType(provider, TodoApp)[0];
-		var todoList = TestUtils.scryRenderedComponentsWithType(todoApp, TodoList);
+		var todoApp = TestUtils.scryRenderedComponentsWithType(provider, TodoApp)[0]
+    var todoList = TestUtils.scryRenderedComponentsWithType(todoApp, TodoList);
 
-		expect(todoList.length).toEqual(1);
+    expect(todoList.length).toEqual(1);
 	});
 });

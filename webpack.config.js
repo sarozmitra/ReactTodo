@@ -5,7 +5,7 @@ var envFile = require('node-env-file');
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 try{
-  envFile(path.join(__dirname, 'config/' + process.env.NODE_ENV + '.env'))
+  envFile(path.join(__dirname, 'config/' + process.env.NODE_ENV + '.env'));
 } catch (e){
 
 }
@@ -35,7 +35,8 @@ module.exports = {
         API_KEY: JSON.stringify(process.env.API_KEY),
         AUTH_DOMAIN: JSON.stringify(process.env.AUTH_DOMAIN),
         DATABASE_URL: JSON.stringify(process.env.DATABASE_URL),
-        STORAGE_BUCKET: JSON.stringify(process.env.STORAGE_BUCKET)        
+        STORAGE_BUCKET: JSON.stringify(process.env.STORAGE_BUCKET),
+        GITHUB_ACCESS_TOKEN: JSON.stringify(process.env.GITHUB_ACCESS_TOKEN)
       }
     })
   ],
@@ -51,11 +52,11 @@ module.exports = {
       './app/api'
     ],
     alias: {
+      app: 'app',
       applicationStyles: 'app/styles/app.scss',
       actions: 'app/actions/actions.jsx',
       reducers: 'app/reducers/reducers.jsx',
-      configureStore: 'app/store/configureStore.jsx',
-      app: 'app'
+      configureStore: 'app/store/configureStore.jsx'      
     },
     extensions: ['', '.js', '.jsx']
   },

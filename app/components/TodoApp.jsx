@@ -36,4 +36,4 @@ export var TodoApp = React.createClass({
 	}
 });
 
-export default Redux.connect() (TodoApp);
+export default Redux.connect()(TodoApp);

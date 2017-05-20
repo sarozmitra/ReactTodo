@@ -23,8 +23,7 @@ describe('TodoList', () => {
 			completed: false,
 			completedAt: undefined,
 			createdAt: 500
-		},
-		{
+		},{
 			id: 2,
 			text: 'Check mail',
 			completed: false,
@@ -41,9 +40,9 @@ describe('TodoList', () => {
 			</Provider>
 		);
 		var todoList = TestUtils.scryRenderedComponentsWithType(provider, ConnectedTodoList)[0];
-		var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, ConnectedTodo);
+    var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, ConnectedTodo);
 
-		expect(todosComponents.length).toBe(todos.length);
+    expect(todosComponents.length).toBe(todos.length);
 	});
 
 	it('should render empty message if no todos', () => {
