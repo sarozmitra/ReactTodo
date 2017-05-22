@@ -11,7 +11,7 @@ describe('TodoAPI', () => {
 		expect(TodoAPI).toExist();
 	});
 
-	
+
 	describe('filterTodos', () => {
 		var todos = [{
 			id: 1,
@@ -47,6 +47,11 @@ describe('TodoAPI', () => {
 
 		it('should filter todos by searchText', () => {
 			var filterTodos = TodoAPI.filterTodos(todos, true, 'some');
+			expect(filterTodos.length).toEqual(2);
+		});
+
+		it('should filter todos by searchText if uppercase', () => {
+			var filterTodos = TodoAPI.filterTodos(todos, true, 'Some');
 			expect(filterTodos.length).toEqual(2);
 		});
 
